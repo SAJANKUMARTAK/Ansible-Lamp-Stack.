@@ -1,0 +1,24 @@
+---
+  - name: Install a Apache Package
+    yum:
+      name: httpd
+      state: present
+
+  - name: Install a GIt
+    yum:
+      name: git
+      state: present
+
+  - name: start & enable service
+    service:
+      name: httpd
+      state: started
+      enabled: yes
+
+  - name: Website Data
+    git:
+      repo: "{{ github_repo_url }}"
+      dest: /var/www/html
+      version: master
+      force: yes
+

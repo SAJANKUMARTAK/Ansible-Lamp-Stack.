@@ -1,0 +1,7 @@
+
+[LampServer]
+
+lampserver1 ansible_host=65.2.11.124 ansible_user=ec2-user
+lampserver2 ansible_host=3.110.179.79 ansible_user=ec2-user
+
+

@@ -1,0 +1,16 @@
+---
+  - name: Install PHP Packages
+    yum:
+        name:
+          - php
+          - php-mysqlnd
+        state: present
+
+  - name: Restart Apache for PHP Integration
+    service:
+        name: httpd
+        state: restarted
+ 
+
+
+

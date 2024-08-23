@@ -1,0 +1,22 @@
+---
+  - name: Install PHP Packages
+    yum:
+        name:
+          - php
+          - php-mysqlnd
+        state: present
+
+  - name: Restart apahe for PHP Integration
+    service:
+        name: httpd
+        state: restarted
+
+  - name: Create a PHP File for Testing PHP
+    file:
+        dest: /var/www/html
+        owner: apache
+        group: apache
+        mode:  0644
+
+
+

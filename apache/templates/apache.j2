@@ -1,0 +1,10 @@
+<virtualhost *:80>
+DocumentRoot /var/ww/html
+Servername sajan.shop
+<directory /var/www/html>
+	AllowOverride All
+	Require all granted
+</directory>
+	ErrorLog /var/log/httpd/error.log
+	CustomLog /var/log/httpd/access.log combined
+</virtualhost>

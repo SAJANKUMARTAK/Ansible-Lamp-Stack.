@@ -1,0 +1,19 @@
+---
+  - name: Install a Apache Package
+    yum:
+      name: httpd
+      state: present
+
+  - name: start & enable service
+    service:
+      name: httpd
+      state: started
+      enabled: yes
+
+  - name: Enable mod_rewrite
+    lineinfile:
+      path: /etc/httpd/httpd.conf
+      regexp: '^#?LoadModule rewrite_module modules/mod_rewrite.so'
+      line: 'LoadModule rewrite_module modules/mod_rewrite.so'
+      state: present
+
